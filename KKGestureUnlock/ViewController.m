@@ -17,6 +17,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     
     _unlockLab.text = @"";
     
@@ -28,6 +29,9 @@
     gestureView.center = self.view.center;
     //将手势界面添加到视图中
     [self.view addSubview:gestureView];
+    
+    
+    
     
 }
 
