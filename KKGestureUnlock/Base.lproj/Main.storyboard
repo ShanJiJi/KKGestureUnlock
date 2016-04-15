@@ -21,14 +21,38 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home_refresh_bg" translatesAutoresizingMaskIntoConstraints="NO" id="st6-Dg-JgE">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-------" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tK9-OI-4rP">
+                                <rect key="frame" x="64" y="469" width="193" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="mC2-ya-QSE"/>
+                                    <constraint firstAttribute="width" constant="193" id="ubI-0H-cCj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="绘制图案" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnj-tr-r0G">
+                                <rect key="frame" x="93" y="61" width="134" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Q1k-ns-HJk"/>
+                                    <constraint firstAttribute="width" constant="134" id="cdo-PZ-ml0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Gnj-tr-r0G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4bf-vy-eRa"/>
                             <constraint firstAttribute="trailing" secondItem="st6-Dg-JgE" secondAttribute="trailing" id="5SO-jm-VtU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tK9-OI-4rP" secondAttribute="bottom" constant="65" id="D1Q-nm-Blh"/>
+                            <constraint firstItem="tK9-OI-4rP" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kjh-Cj-Y9w"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="st6-Dg-JgE" secondAttribute="bottom" id="RP2-DS-5UD"/>
                             <constraint firstItem="st6-Dg-JgE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Sne-eo-wR0"/>
                             <constraint firstItem="st6-Dg-JgE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="idt-iA-vhX"/>
                             <constraint firstItem="st6-Dg-JgE" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="jXm-FB-flc"/>
+                            <constraint firstItem="Gnj-tr-r0G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="41" id="kAu-oF-CtS"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -37,9 +61,13 @@
                         </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="unlockLab" destination="tK9-OI-4rP" id="PSk-I4-frR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="280" y="305"/>
         </scene>
     </scenes>
     <resources>

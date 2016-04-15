@@ -23,6 +23,7 @@
     
     if (self == [super initWithFrame:frame]) {
         
+        self.backgroundColor = [UIColor clearColor];
         [self configLockButtonUI];
         
         _gestureButtonArr = [NSMutableArray array];
@@ -103,22 +104,7 @@
 
 //手指开始触摸屏幕
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-//    //得到手指触摸点
-//    CGPoint point = [self pointWithTouches:touches];
-//    
-//    //通过触摸点来得到手指碰到的按钮
-//    UIButton *gestBtn = [self buttonWithPoint:point];
-//    
-//    //如果按钮存在并且该按钮没有被选中
-//    if (gestBtn && gestBtn.selected == NO) {
-//        
-//        //选中按钮
-//        gestBtn.selected = YES;
-//        
-//        //保存选中的按钮
-//        [_gestureButtonArr addObject:gestBtn];
-//        
-//    }
+    
     [self touchesMoved:touches withEvent:event];
 }
 
@@ -170,14 +156,9 @@
         
     }
     
-    
-    //取消所有选中按钮的选中状态
-//    [_gestureButtonArr makeObjectsPerformSelector:@selector(setSelected:) withObject:NO];
-    
     //清空所有选中按钮
     [_gestureButtonArr removeAllObjects];
     
-//    _gestureLastPoint = CGPointZero;
     //重新绘制界面
     [self setNeedsDisplay];
     
@@ -219,11 +200,6 @@
     
     //当没有选中按钮的时候连接手指的触摸点
     [path addLineToPoint:_gestureLastPoint];
-//    // 判断有没有选中按钮
-//    if (_gestureButtonArr.count != 0) {
-//        //当没有选中按钮的时候连接手指的触摸点
-//        [path addLineToPoint:_gestureLastPoint];
-//    }
     
     //渲染到视图上
     [path stroke];

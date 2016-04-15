@@ -18,9 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    _unlockLab.text = @"";
+    
     //创建手势界面
     KKGestureView *gestureView = [[KKGestureView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
-    
     gestureView.delegate = self;
     
     //设置手势界面居中
@@ -32,7 +33,8 @@
 
 -(void)GetGestureUnlockString:(NSString *)string{
     
-    NSLog(@"UnlockString----%@",string);
+    _unlockLab.text = string;
+    
 }
 
 - (void)didReceiveMemoryWarning {
