@@ -103,22 +103,23 @@
 
 //手指开始触摸屏幕
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    //得到手指触摸点
-    CGPoint point = [self pointWithTouches:touches];
-    
-    //通过触摸点来得到手指碰到的按钮
-    UIButton *gestBtn = [self buttonWithPoint:point];
-    
-    //如果按钮存在并且该按钮没有被选中
-    if (gestBtn && gestBtn.selected == NO) {
-        
-        //选中按钮
-        gestBtn.selected = YES;
-        
-        //保存选中的按钮
-        [_gestureButtonArr addObject:gestBtn];
-        
-    }
+//    //得到手指触摸点
+//    CGPoint point = [self pointWithTouches:touches];
+//    
+//    //通过触摸点来得到手指碰到的按钮
+//    UIButton *gestBtn = [self buttonWithPoint:point];
+//    
+//    //如果按钮存在并且该按钮没有被选中
+//    if (gestBtn && gestBtn.selected == NO) {
+//        
+//        //选中按钮
+//        gestBtn.selected = YES;
+//        
+//        //保存选中的按钮
+//        [_gestureButtonArr addObject:gestBtn];
+//        
+//    }
+    [self touchesMoved:touches withEvent:event];
 }
 
 //手指在屏幕上滑动时调用的方法
@@ -153,8 +154,25 @@
 //手指离开屏幕
 -(void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
+    NSMutableString *unlockStr = [NSMutableString string];
+    
+    for (UIButton *btn in _gestureButtonArr) {
+        //取消所有选中按钮的选中状态
+        btn.selected = NO;
+        
+        [unlockStr appendFormat:@"%d",btn.tag];
+        
+    }
+    
+    if ([self.delegate respondsToSelector:@selector(GetGestureUnlockString:)]) {
+        
+        [self.delegate GetGestureUnlockString:unlockStr];
+        
+    }
+    
+    
     //取消所有选中按钮的选中状态
-    [_gestureButtonArr makeObjectsPerformSelector:@selector(setSelected:) withObject:NO];
+//    [_gestureButtonArr makeObjectsPerformSelector:@selector(setSelected:) withObject:NO];
     
     //清空所有选中按钮
     [_gestureButtonArr removeAllObjects];
@@ -201,6 +219,11 @@
     
     //当没有选中按钮的时候连接手指的触摸点
     [path addLineToPoint:_gestureLastPoint];
+//    // 判断有没有选中按钮
+//    if (_gestureButtonArr.count != 0) {
+//        //当没有选中按钮的时候连接手指的触摸点
+//        [path addLineToPoint:_gestureLastPoint];
+//    }
     
     //渲染到视图上
     [path stroke];
