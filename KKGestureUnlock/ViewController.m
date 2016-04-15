@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "KKGestureView.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    KKGestureView *gestureView = [[KKGestureView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.width)];
+    
+    gestureView.center = self.view.center;
+    
+    [self.view addSubview:gestureView];
+    
 }
 
 - (void)didReceiveMemoryWarning {

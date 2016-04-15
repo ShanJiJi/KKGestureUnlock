@@ -16,6 +16,7 @@
 		0432A15C1CC0B4D50036A0BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0432A15A1CC0B4D50036A0BB /* LaunchScreen.storyboard */; };
 		0432A1671CC0B4D50036A0BB /* KKGestureUnlockTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432A1661CC0B4D50036A0BB /* KKGestureUnlockTests.m */; };
 		0432A1721CC0B4D50036A0BB /* KKGestureUnlockUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432A1711CC0B4D50036A0BB /* KKGestureUnlockUITests.m */; };
+		0432A1811CC0B5B20036A0BB /* KKGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0432A1801CC0B5B20036A0BB /* KKGestureView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		0432A16D1CC0B4D50036A0BB /* KKGestureUnlockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KKGestureUnlockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0432A1711CC0B4D50036A0BB /* KKGestureUnlockUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKGestureUnlockUITests.m; sourceTree = "<group>"; };
 		0432A1731CC0B4D50036A0BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0432A17F1CC0B5B20036A0BB /* KKGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKGestureView.h; sourceTree = "<group>"; };
+		0432A1801CC0B5B20036A0BB /* KKGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKGestureView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				0432A14D1CC0B4D50036A0BB /* AppDelegate.m */,
 				0432A14F1CC0B4D50036A0BB /* ViewController.h */,
 				0432A1501CC0B4D50036A0BB /* ViewController.m */,
+				0432A17F1CC0B5B20036A0BB /* KKGestureView.h */,
+				0432A1801CC0B5B20036A0BB /* KKGestureView.m */,
 				0432A1521CC0B4D50036A0BB /* Main.storyboard */,
 				0432A1581CC0B4D50036A0BB /* Assets.xcassets */,
 				0432A15A1CC0B4D50036A0BB /* LaunchScreen.storyboard */,
@@ -210,6 +215,7 @@
 				TargetAttributes = {
 					0432A1451CC0B4D50036A0BB = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5965CBUPHR;
 					};
 					0432A1611CC0B4D50036A0BB = {
 						CreatedOnToolsVersion = 7.3;
@@ -273,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0432A1811CC0B5B20036A0BB /* KKGestureView.m in Sources */,
 				0432A1511CC0B4D50036A0BB /* ViewController.m in Sources */,
 				0432A1571CC0B4D50036A0BB /* KKGestureUnlock.xcdatamodeld in Sources */,
 				0432A14E1CC0B4D50036A0BB /* AppDelegate.m in Sources */,
@@ -419,6 +426,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = KKGestureUnlock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhenwei.123.KKGestureUnlock;
@@ -430,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = KKGestureUnlock/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhenwei.123.KKGestureUnlock;
